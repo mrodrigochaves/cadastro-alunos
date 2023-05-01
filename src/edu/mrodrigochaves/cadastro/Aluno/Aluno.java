@@ -1,10 +1,10 @@
 package edu.mrodrigochaves.cadastro.Aluno;
 
 public class Aluno {
-    String matricula;
-    String nome;
-    int idade;
-    String endereco;
+    private String matricula;
+    private String nome;
+    private int idade;
+    private String endereco;
 
 
 }
