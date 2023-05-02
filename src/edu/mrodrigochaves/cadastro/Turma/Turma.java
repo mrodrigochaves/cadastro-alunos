@@ -4,8 +4,8 @@ import java.sql.Date;
 
 public class Turma {
 
-    String titulo;
-    String descricao;
-    Date dataInicio;
+    private String titulo;
+    private String descricao;
+    private Date dataInicio;
     
 }
