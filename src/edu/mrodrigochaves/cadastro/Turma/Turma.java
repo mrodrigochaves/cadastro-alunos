@@ -2,36 +2,32 @@ package edu.mrodrigochaves.cadastro.Turma;
 
 import java.time.LocalDate;
 
-public class Turma {
+import edu.mrodrigochaves.cadastro.Heranca;
 
-    private String titulo;
-    private String descricao;
+public class Turma extends Heranca {
+
     private LocalDate dataInicio;
 
-    public String getTitulo() {
-        return titulo;
+    @Override
+    public int calcular_Nota() {
+        return Nota + 10;
     }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+
+    public Turma(){
+
     }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+
     public LocalDate getDataInicio() {
         return dataInicio;
     }
+
     public void setDataInicio(LocalDate localDate) {
         this.dataInicio = localDate;
     }
+
     @Override
     public String toString() {
-        return "Turma [titulo=" + titulo + ", descricao=" + descricao + ", dataInicio=" + dataInicio + "]";
+        return "Turma [titulo=" + getTitulo() + ", descricao=" + getDescricao() + ", dataInicio=" + dataInicio + "]";
     }
 
-    
-    
-    
 }
