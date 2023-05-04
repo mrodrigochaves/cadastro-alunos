@@ -1,6 +1,8 @@
 package edu.mrodrigochaves.cadastro.Aluno;
 
+import java.util.Collection;
 import java.util.LinkedHashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import edu.mrodrigochaves.cadastro.Disciplina;
@@ -8,15 +10,30 @@ import edu.mrodrigochaves.cadastro.Disciplina;
 public class Aluno {
     
     private String nome;
+    private Set<Disciplina> disciplinasInscritas = new LinkedHashSet<>();
     private Set<Disciplina> disciplinasConcluidas = new LinkedHashSet<>();
-    private Set<Disciplina> disciplinasIncompletas = new LinkedHashSet<>();
+    
 
 
-    public void inscreverDisciplina(Disciplina disciplina){}
+    public void inscreverDisciplina(Disciplina disciplina){
+        this.disciplinasInscritas.addAll(Disciplina.getDisciplinas());
+        Disciplina.getAlunosInscritos().addAll((Collection<? extends Disciplina>) this);
+    }
+    
 
-    public void realizarAvaliacao(){}
+    public void realizarAvaliacao(){
+       Optional<Disciplina> disciplina = this.disciplinasInscritas.stream().findFirst();
+        if(disciplina.isPresent()){
+            this.disciplinasConcluidas.add(disciplina.get());
+            this.disciplinasInscritas.remove(disciplina.get());
+        } else {
+            System.out.println("Você não está matriculado em nenhuma disciplina!");
+        }
+    }
 
-    public void calcular_Nota(){}
+    public int calcular_Nota(){
+        return this.disciplinasConcluidas.stream().mapToInt(disciplina -> disciplina.calcular_Nota()).sum();
+    }
 
     public String getNome() {
         return nome;
@@ -34,12 +51,12 @@ public class Aluno {
         this.disciplinasConcluidas = disciplinasConcluidas;
     }
 
-    public Set<Disciplina> getDisciplinasIncompletas() {
-        return disciplinasIncompletas;
+    public Set<Disciplina> getDisciplinasInscritas() {
+        return disciplinasInscritas;
     }
 
-    public void setDisciplinasIncompletas(Set<Disciplina> disciplinasIncompletas) {
-        this.disciplinasIncompletas = disciplinasIncompletas;
+    public void setDisciplinasInscritas(Set<Disciplina> disciplinasInscritas) {
+        this.disciplinasInscritas = disciplinasInscritas;
     }
 
     @Override
@@ -48,7 +65,7 @@ public class Aluno {
         int result = 1;
         result = prime * result + ((nome == null) ? 0 : nome.hashCode());
         result = prime * result + ((disciplinasConcluidas == null) ? 0 : disciplinasConcluidas.hashCode());
-        result = prime * result + ((disciplinasIncompletas == null) ? 0 : disciplinasIncompletas.hashCode());
+        result = prime * result + ((disciplinasInscritas == null) ? 0 : disciplinasInscritas.hashCode());
         return result;
     }
 
@@ -71,10 +88,10 @@ public class Aluno {
                 return false;
         } else if (!disciplinasConcluidas.equals(other.disciplinasConcluidas))
             return false;
-        if (disciplinasIncompletas == null) {
-            if (other.disciplinasIncompletas != null)
+        if (disciplinasInscritas == null) {
+            if (other.disciplinasInscritas != null)
                 return false;
-        } else if (!disciplinasIncompletas.equals(other.disciplinasIncompletas))
+        } else if (!disciplinasInscritas.equals(other.disciplinasInscritas))
             return false;
         return true;
     }
