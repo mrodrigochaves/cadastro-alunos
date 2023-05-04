@@ -1,6 +1,6 @@
 package edu.mrodrigochaves.cadastro;
 
-public abstract class Heranca {
+public abstract class Disciplina {
 
     protected static final int Nota = 10;
     

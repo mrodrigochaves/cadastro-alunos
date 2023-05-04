@@ -1,8 +1,8 @@
 package edu.mrodrigochaves.cadastro.Curso;
 
-import edu.mrodrigochaves.cadastro.Heranca;
+import edu.mrodrigochaves.cadastro.Disciplina;
 
-public class Curso extends Heranca{
+public class Curso extends Disciplina{
 
     
     private int cargaHoraria;

@@ -2,9 +2,9 @@ package edu.mrodrigochaves.cadastro.Turma;
 
 import java.time.LocalDate;
 
-import edu.mrodrigochaves.cadastro.Heranca;
+import edu.mrodrigochaves.cadastro.Disciplina;
 
-public class Turma extends Heranca {
+public class Turma extends Disciplina {
 
     private LocalDate dataInicio;
 
