@@ -1,5 +1,8 @@
 package edu.mrodrigochaves.cadastro;
 
+import java.util.Collection;
+import java.util.Set;
+
 public abstract class Disciplina {
 
     protected static final int Nota = 10;
@@ -23,6 +26,14 @@ public abstract class Disciplina {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public static Collection<? extends Disciplina> getDisciplinas() {
+        return null;
+    }
+
+    public static Set<Disciplina> getAlunosInscritos() {
+        return null;
     }
 
     
