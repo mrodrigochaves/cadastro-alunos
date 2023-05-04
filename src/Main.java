@@ -9,17 +9,13 @@ public class Main {
         
         Aluno aluno1 = new Aluno();
         aluno1.setNome("João");
-        aluno1.setIdade(8);
-        aluno1.setMatricula("001");
-        aluno1.setEndereco("Rua Um");
+        
 
        
 
         Aluno aluno2 = new Aluno();
         aluno2.setNome("Maria");
-        aluno2.setIdade(9);
-        aluno2.setMatricula("002");
-        aluno2.setEndereco("Rua Dois");
+        
 
         Curso curso1 = new Curso();
         curso1.setTitulo("HTML");
