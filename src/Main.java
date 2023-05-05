@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 
+import edu.mrodrigochaves.cadastro.Disciplina;
 import edu.mrodrigochaves.cadastro.Aluno.Aluno;
 import edu.mrodrigochaves.cadastro.Curso.Curso;
 import edu.mrodrigochaves.cadastro.Turma.Turma;
@@ -29,6 +30,12 @@ public class Main {
         // System.out.println(curso1);
 
         // System.out.println(turma1);
+
+        Disciplina disciplina = new Disciplina();
+        disciplina.setTitulo("Matematica Aplicada");
+        disciplina.setDescricao("Curso de matemática aplicada!");
+        disciplina.getDisciplinas().add(curso1);
+        disciplina.getDisciplinas().add(curso2);
 
     }
 }
