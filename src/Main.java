@@ -19,6 +19,11 @@ public class Main {
         curso1.setDescricao("Curso de programação Web");
         curso1.setCargaHoraria(10);
 
+        Curso curso2 = new Curso();
+        curso1.setTitulo("CSS");
+        curso1.setDescricao("Curso de CSS");
+        curso1.setCargaHoraria(15);
+
         Turma turma1 = new Turma();
         turma1.setTitulo("03-2023");
         turma1.setDescricao("Décima turma de programação com HTML");
@@ -32,8 +37,8 @@ public class Main {
         // System.out.println(turma1);
 
         Disciplina disciplina = new Disciplina();
-        disciplina.setTitulo("CSS avançado!");
-        disciplina.setDescricao("Curso de CSS!");
+        disciplina.setTitulo("Desenvolvimento Front-End");
+        disciplina.setDescricao("Curso de Desenvolvimento Web Fron-end!");
         disciplina.getDisciplinas().add(curso1);
         disciplina.getDisciplinas().add(curso2);
 
