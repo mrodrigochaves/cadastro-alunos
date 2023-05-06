@@ -1,18 +1,11 @@
-import java.time.LocalDate;
-
 import edu.mrodrigochaves.cadastro.Aluno.Aluno;
+import edu.mrodrigochaves.cadastro.Avaliacao.Avaliacao;
 import edu.mrodrigochaves.cadastro.Curso.Curso;
-import edu.mrodrigochaves.cadastro.Disciplina.Disciplina;
 import edu.mrodrigochaves.cadastro.Turma.Turma;
 
+import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
-
-        Aluno aluno1 = new Aluno();
-        aluno1.setNome("João");
-
-        Aluno aluno2 = new Aluno();
-        aluno2.setNome("Maria");
 
         Curso curso1 = new Curso();
         curso1.setTitulo("HTML");
@@ -36,11 +29,25 @@ public class Main {
 
         // System.out.println(turma1);
 
-        Curso curso = new Curso();
-        curso.setTitulo("Formação Developer Front-End");
-        curso.setDescricao("Curso de Desenvolvimento Web Fron-end!");
-        curso.setCargaHoraria(25);
+        Avaliacao avaliacao = new Avaliacao();
+        avaliacao.setNome("Formação Developer Front-End");
+        avaliacao.setDescricao("Curso de Desenvolvimento Web Fron-end!");
+        avaliacao.getDisciplinas().add(curso1);
+        avaliacao.getDisciplinas().add(curso2);
 
-        
+        Aluno alunoMarcio = new Aluno();
+        alunoMarcio.setNome("Márcio");
+        alunoMarcio.inscreverCurso(curso1);
+        System.out.println("Curso inscrito: " + alunoMarcio.getDisciplinasInscritas());
+        alunoMarcio.avancar();
+        alunoMarcio.avancar();
+        System.out.println("-");
+        System.out.println("Inscrição em curso:" + alunoMarcio.getDisciplinasInscritas());
+        System.out.println("Inscrição em curso:" + alunoMarcio.getDisciplinasConcluidas());
+        System.out.println("Nota: " + alunoMarcio.calcular_Nota());
+
+
+        System.out.println("-------");
+
     }
 }
