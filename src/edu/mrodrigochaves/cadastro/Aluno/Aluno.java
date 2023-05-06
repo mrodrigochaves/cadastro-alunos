@@ -19,7 +19,7 @@ public class Aluno {
     }
     
 
-    public void realizarAvaliacao(){
+    public void avancar(){
        Optional<Disciplina> disciplina = this.disciplinasInscritas.stream().findFirst();
         if(disciplina.isPresent()){
             this.disciplinasConcluidas.add(disciplina.get());
@@ -48,6 +48,14 @@ public class Aluno {
         this.nome = nome;
     }
 
+    public Set<Disciplina> getDisciplinasInscritas() {
+        return disciplinasInscritas;
+    }
+
+    public void setDisciplinasInscritas(Set<Disciplina> disciplinasInscritas) {
+        this.disciplinasInscritas = disciplinasInscritas;
+    }
+
     public Set<Disciplina> getDisciplinasConcluidas() {
         return disciplinasConcluidas;
     }
@@ -56,13 +64,7 @@ public class Aluno {
         this.disciplinasConcluidas = disciplinasConcluidas;
     }
 
-    public Set<Disciplina> getDisciplinasInscritas() {
-        return disciplinasInscritas;
-    }
-
-    public void setDisciplinasInscritas(Set<Disciplina> disciplinasInscritas) {
-        this.disciplinasInscritas = disciplinasInscritas;
-    }
+    
 
     @Override
     public int hashCode() {
