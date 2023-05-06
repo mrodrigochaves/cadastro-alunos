@@ -40,7 +40,6 @@ public class Main {
         curso.setTitulo("Formação Developer Front-End");
         curso.setDescricao("Curso de Desenvolvimento Web Fron-end!");
         curso.setCargaHoraria(25);
-        curso.getDisciplinas().add(curso1);
 
         
     }

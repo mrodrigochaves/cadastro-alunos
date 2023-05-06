@@ -1,10 +1,6 @@
 package edu.mrodrigochaves.cadastro.Aluno;
 
-import java.util.LinkedHashSet;
-import java.util.Optional;
-import java.util.Set;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.*;
 
 import edu.mrodrigochaves.cadastro.Curso.Curso;
 import edu.mrodrigochaves.cadastro.Disciplina.Disciplina;
@@ -19,7 +15,7 @@ public class Aluno {
 
     public void inscreverCurso(Curso curso){
         this.disciplinasInscritas.addAll(curso.getDisciplinas());
-        curso.getAlunosInscritos().add(curso);
+        curso.getAlunosInscritos().add(this);
     }
     
 
