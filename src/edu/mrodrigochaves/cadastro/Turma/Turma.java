@@ -2,7 +2,7 @@ package edu.mrodrigochaves.cadastro.Turma;
 
 import java.time.LocalDate;
 
-import edu.mrodrigochaves.cadastro.Disciplina;
+import edu.mrodrigochaves.cadastro.Disciplina.Disciplina;
 
 public class Turma extends Disciplina {
 

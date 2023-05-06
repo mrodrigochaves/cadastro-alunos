@@ -1,8 +1,8 @@
 import java.time.LocalDate;
 
-import edu.mrodrigochaves.cadastro.Disciplina;
 import edu.mrodrigochaves.cadastro.Aluno.Aluno;
 import edu.mrodrigochaves.cadastro.Curso.Curso;
+import edu.mrodrigochaves.cadastro.Disciplina.Disciplina;
 import edu.mrodrigochaves.cadastro.Turma.Turma;
 
 public class Main {
@@ -20,9 +20,9 @@ public class Main {
         curso1.setCargaHoraria(10);
 
         Curso curso2 = new Curso();
-        curso1.setTitulo("CSS");
-        curso1.setDescricao("Curso de CSS");
-        curso1.setCargaHoraria(15);
+        curso2.setTitulo("CSS");
+        curso2.setDescricao("Curso de CSS");
+        curso2.setCargaHoraria(15);
 
         Turma turma1 = new Turma();
         turma1.setTitulo("03-2023");
@@ -36,11 +36,12 @@ public class Main {
 
         // System.out.println(turma1);
 
-        Disciplina disciplina = new Disciplina();
-        disciplina.setTitulo("Desenvolvimento Front-End");
-        disciplina.setDescricao("Curso de Desenvolvimento Web Fron-end!");
-        disciplina.getDisciplinas().add(curso1);
-        disciplina.getDisciplinas().add(curso2);
+        Curso curso = new Curso();
+        curso.setTitulo("Formação Developer Front-End");
+        curso.setDescricao("Curso de Desenvolvimento Web Fron-end!");
+        curso.setCargaHoraria(25);
+        curso.getDisciplinas().add(curso1);
 
+        
     }
 }

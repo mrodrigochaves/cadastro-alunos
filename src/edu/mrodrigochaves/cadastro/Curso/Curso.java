@@ -1,6 +1,6 @@
 package edu.mrodrigochaves.cadastro.Curso;
 
-import edu.mrodrigochaves.cadastro.Disciplina;
+import edu.mrodrigochaves.cadastro.Disciplina.Disciplina;
 
 public class Curso extends Disciplina{
 

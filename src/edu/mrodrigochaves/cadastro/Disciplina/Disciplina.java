@@ -1,4 +1,4 @@
-package edu.mrodrigochaves.cadastro;
+package edu.mrodrigochaves.cadastro.Disciplina;
 
 import java.util.Collection;
 import java.util.Set;

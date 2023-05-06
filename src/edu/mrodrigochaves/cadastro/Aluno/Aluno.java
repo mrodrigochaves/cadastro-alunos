@@ -1,11 +1,13 @@
 package edu.mrodrigochaves.cadastro.Aluno;
 
-import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Optional;
 import java.util.Set;
+import java.util.Collection;
+import java.util.Iterator;
 
-import edu.mrodrigochaves.cadastro.Disciplina;
+import edu.mrodrigochaves.cadastro.Curso.Curso;
+import edu.mrodrigochaves.cadastro.Disciplina.Disciplina;
 
 public class Aluno {
     
@@ -15,9 +17,9 @@ public class Aluno {
     
 
 
-    public void inscreverDisciplina(Disciplina disciplina){
-        this.disciplinasInscritas.addAll(Disciplina.getDisciplinas());
-        Disciplina.getAlunosInscritos().addAll((Collection<? extends Disciplina>) this);
+    public void inscreverCurso(Curso curso){
+        this.disciplinasInscritas.addAll(curso.getDisciplinas());
+        curso.getAlunosInscritos().add(curso);
     }
     
 
@@ -27,12 +29,19 @@ public class Aluno {
             this.disciplinasConcluidas.add(disciplina.get());
             this.disciplinasInscritas.remove(disciplina.get());
         } else {
-            System.out.println("Você não está matriculado em nenhuma disciplina!");
+            System.err.println("Você não está matriculado em nenhuma disciplina!");
         }
     }
 
     public int calcular_Nota(){
-        return this.disciplinasConcluidas.stream().mapToInt(disciplina -> disciplina.calcular_Nota()).sum();
+        Iterator<Disciplina> iterator = this.disciplinasConcluidas.iterator();
+        int soma = 0;
+        while(iterator.hasNext()){
+            int next = iterator.next().calcular_Nota();
+            soma += next;
+        }
+        return soma;
+        // return this.disciplinasConcluidas.stream().mapToInt(disciplina -> disciplina.calcular_Nota()).sum();
     }
 
     public String getNome() {

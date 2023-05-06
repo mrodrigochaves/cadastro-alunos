@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import edu.mrodrigochaves.cadastro.Disciplina;
 import edu.mrodrigochaves.cadastro.Aluno.Aluno;
+import edu.mrodrigochaves.cadastro.Disciplina.Disciplina;
 
 public class Avaliacao {
 
