@@ -32,8 +32,8 @@ public class Main {
         // System.out.println(turma1);
 
         Disciplina disciplina = new Disciplina();
-        disciplina.setTitulo("Matematica Aplicada");
-        disciplina.setDescricao("Curso de matemática aplicada!");
+        disciplina.setTitulo("CSS avançado!");
+        disciplina.setDescricao("Curso de CSS!");
         disciplina.getDisciplinas().add(curso1);
         disciplina.getDisciplinas().add(curso2);
 
