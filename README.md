@@ -1,18 +1,24 @@
-## Getting Started
+# Sistema de Cadastro de Cursos, Turmas, Avaliações e Alunos
+Este é um exemplo de um sistema simples de cadastro de cursos, turmas, avaliações e alunos em Java.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## O programa utiliza as seguintes classes:
 
-## Folder Structure
+    Aluno: representa um aluno que se inscreve em uma avaliação.
+    Avaliacao: representa uma avaliação que consiste em uma lista de disciplinas, como cursos e turmas.
+    Curso: representa um curso que faz parte de uma avaliação.
+    Turma: representa uma turma que faz parte de uma avaliação.
+    O programa começa criando dois objetos da classe Curso com diferentes títulos, descrições e cargas horárias. Em seguida, um objeto da classe Turma é criado com um título, descrição e data de início.
 
-The workspace contains two folders by default, where:
+Um objeto da classe Avaliacao é criado com um nome, uma descrição e adicionando os cursos e turmas criados anteriormente à lista de disciplinas da avaliação.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Dois objetos da classe Aluno são criados, com diferentes nomes. Cada aluno é inscrito na avaliação usando o método inscreverCurso() e a lista de disciplinas inscritas é exibida usando o método getDisciplinasInscritas().
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Os alunos avançam para o próximo módulo usando o método avancar(). Após cada avanço, é exibido o status de inscrição do aluno e sua nota atual usando os métodos getDisciplinasInscritas(), getDisciplinasConcluidas() e calcular_Nota().
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Como executar o programa
+Para executar o programa, é necessário ter o ambiente de desenvolvimento Java instalado na máquina.
 
-## Dependency Management
+Em seguida, abra o arquivo Main.java em um editor de código e execute o programa clicando em "Run" ou digitando o comando java Main no terminal.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+As informações dos alunos serão exibidas no console após a execução do programa.
+
