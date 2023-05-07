@@ -21,8 +21,8 @@ public class Turma extends Disciplina {
         return dataInicio;
     }
 
-    public void setDataInicio(LocalDate localDate) {
-        this.dataInicio = localDate;
+    public void setDataInicio(LocalDate dataInicio) {
+        this.dataInicio = dataInicio;
     }
 
     @Override

@@ -2,6 +2,7 @@ package edu.mrodrigochaves.cadastro.Aluno;
 
 import java.util.*;
 
+import edu.mrodrigochaves.cadastro.Avaliacao.Avaliacao;
 import edu.mrodrigochaves.cadastro.Curso.Curso;
 import edu.mrodrigochaves.cadastro.Disciplina.Disciplina;
 
@@ -13,9 +14,9 @@ public class Aluno {
     
 
 
-    public void inscreverCurso(Curso curso){
-        this.disciplinasInscritas.addAll(curso.getDisciplinas());
-        curso.getAlunosInscritos().add(this);
+    public void inscreverCurso(Avaliacao avaliacao){
+        this.disciplinasInscritas.addAll(avaliacao.getDisciplinas());
+        avaliacao.getAlunosInscritos().add(this);
     }
     
 
