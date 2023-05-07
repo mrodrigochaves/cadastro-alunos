@@ -24,13 +24,7 @@ public class Main {
         turma1.setDescricao("Décima turma de programação Front-End");
         turma1.setDataInicio(LocalDate.of(2023, 3, 5));
 
-        // System.out.println(aluno1);
-        // System.out.println(aluno2);
-
-        // System.out.println(curso1);
-
-        // System.out.println(turma1);
-
+     
         Avaliacao avaliacao = new Avaliacao();
         avaliacao.setNome("Formação Developer Front-End");
         avaliacao.setDescricao("Curso de Desenvolvimento Web Fron-end!");
@@ -53,7 +47,7 @@ public class Main {
         System.out.println("-------");
 
         Aluno alunoBenjamin = new Aluno();
-        alunoBenjamin.setNome("Márcio");
+        alunoBenjamin.setNome("Benjamin");
         alunoBenjamin.inscreverCurso(avaliacao);
         System.out.println("Curso inscrito: " + alunoBenjamin.getDisciplinasInscritas());
         alunoBenjamin.avancar();
