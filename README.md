@@ -1,5 +1,5 @@
 # Sistema de Cadastro de Cursos, Turmas, Avaliações e Alunos
-Este é um exemplo de um sistema simples de cadastro de cursos, turmas, avaliações e alunos em Java.
+Este é um exemplo de um sistema de cadastro de cursos, turmas, avaliações e alunos em Java.
 
 ## O programa utiliza as seguintes classes:
 
