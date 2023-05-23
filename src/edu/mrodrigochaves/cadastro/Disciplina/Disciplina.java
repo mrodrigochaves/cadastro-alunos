@@ -7,6 +7,7 @@ public abstract class Disciplina {
     private String titulo;
     private String descricao;
 
+    // Método abstrato para calcular a nota da disciplina
     public abstract int calcular_Nota();
 
     public String getTitulo() {
