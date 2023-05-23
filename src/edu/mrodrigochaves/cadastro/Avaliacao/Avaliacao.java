@@ -5,9 +5,6 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import edu.mrodrigochaves.cadastro.Aluno.Aluno;
-import edu.mrodrigochaves.cadastro.Disciplina.Disciplina;
-
 public class Avaliacao {
 
     private String nome;
@@ -17,36 +14,50 @@ public class Avaliacao {
 
     private Set<Aluno> alunosInscritos = new HashSet<>();
     private Set<Disciplina> disciplinas = new LinkedHashSet<>();
+
+    // Getter e Setter para o atributo 'nome'
     public String getNome() {
         return nome;
     }
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    // Getter e Setter para o atributo 'descricao'
     public String getDescricao() {
         return descricao;
     }
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    // Getter para o atributo 'dataInicial'
     public LocalDate getDataInicial() {
         return dataInicial;
     }
+
+    // Getter para o atributo 'dataFinal'
     public LocalDate getDataFinal() {
         return dataFinal;
     }
+
+    // Getter e Setter para o atributo 'alunosInscritos'
     public Set<Aluno> getAlunosInscritos() {
         return alunosInscritos;
     }
     public void setAlunosInscritos(Set<Aluno> alunosInscritos) {
         this.alunosInscritos = alunosInscritos;
     }
+
+    // Getter e Setter para o atributo 'disciplinas'
     public Set<Disciplina> getDisciplinas() {
         return disciplinas;
     }
     public void setDisciplinas(Set<Disciplina> disciplinas) {
         this.disciplinas = disciplinas;
     }
+
+    // Sobrescrita do método hashCode() para permitir comparação de objetos com base nos atributos
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -59,6 +70,8 @@ public class Avaliacao {
         result = prime * result + ((disciplinas == null) ? 0 : disciplinas.hashCode());
         return result;
     }
+
+    // Sobrescrita do método equals() para permitir comparação de objetos com base nos atributos
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -100,6 +113,5 @@ public class Avaliacao {
             return false;
         return true;
     }
-
-    
 }
+
