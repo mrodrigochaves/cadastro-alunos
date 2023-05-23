@@ -12,16 +12,15 @@ public class Aluno {
     private Set<Disciplina> disciplinasInscritas = new LinkedHashSet<>();
     private Set<Disciplina> disciplinasConcluidas = new LinkedHashSet<>();
     
-
-
+    // Método para inscrever o aluno em um curso
     public void inscreverCurso(Avaliacao avaliacao){
         this.disciplinasInscritas.addAll(avaliacao.getDisciplinas());
         avaliacao.getAlunosInscritos().add(this);
     }
     
-
+    // Método para avançar o aluno para a próxima disciplina
     public void avancar(){
-       Optional<Disciplina> disciplina = this.disciplinasInscritas.stream().findFirst();
+        Optional<Disciplina> disciplina = this.disciplinasInscritas.stream().findFirst();
         if(disciplina.isPresent()){
             this.disciplinasConcluidas.add(disciplina.get());
             this.disciplinasInscritas.remove(disciplina.get());
@@ -29,7 +28,8 @@ public class Aluno {
             System.err.println("Você não está matriculado em nenhuma disciplina!");
         }
     }
-
+    
+    // Método para calcular a nota total do aluno
     public int calcular_Nota(){
         Iterator<Disciplina> iterator = this.disciplinasConcluidas.iterator();
         int soma = 0;
@@ -40,7 +40,8 @@ public class Aluno {
         return soma;
         // return this.disciplinasConcluidas.stream().mapToInt(disciplina -> disciplina.calcular_Nota()).sum();
     }
-
+    
+    // Getters e Setters
     public String getNome() {
         return nome;
     }
@@ -65,8 +66,7 @@ public class Aluno {
         this.disciplinasConcluidas = disciplinasConcluidas;
     }
 
-    
-
+    // Métodos hashCode() e equals() para comparação de objetos Aluno
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -103,10 +103,4 @@ public class Aluno {
             return false;
         return true;
     }
-
-    
-    
-    
-    
-
 }
